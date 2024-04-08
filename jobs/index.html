@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trova il tuo lavoro</title>
+</head>
+
+<body>
+    <h1>Trova il tuo lavoro!</h1>
+    <form action="">
+        <label for="title">Posizione Lavorativa:</label>
+        <input type="text" name="title" id="title" value="">
+        <label for="location">Posizione Geografica:</label>
+        <input type="text" name="location" id="location" value="">
+        <button id="cerca" onclick="addJob()">Cerca</button>
+        <button id="cancella campi di ricerca" onclick="deleteResults()">Cancella campi di ricerca</button>
+    </form>
+<div id="risultati">
+    <h3 >Risultati ricerca</h3>
+    <ul id="listaLavori">
+
+    </ul>
+    <p id="conteggio">   
+
+    </p>
+
+</div>
+
+
+
+
+    <script src="./assets/scaricabile.js" defer></script>
+</body>
+
+</html>

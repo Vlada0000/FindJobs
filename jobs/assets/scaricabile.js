@@ -193,8 +193,7 @@ if (selection.count === 0) {
 function deleteResults() {
 document.getElementById("location").value = ""
 document.getElementById("title").value = ""
-li.innerText = ""
-conteggio.innerText = ""
+
 
   }
 

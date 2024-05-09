@@ -126,48 +126,13 @@ const jobs = [
 ]
 
 
-
-
-
-
-
-//function cercaLavoro(jobs, jobTitle, jobLocation) {
-//for (let i = 0; i < jobs.length; i++) {
-//if (jobs[i] === jobTitle && jobs[i]===jobLocation) {
-//return i; 
-
-//}
-//}
-//return -1; 
-//}
-
-
-function searchJob(title, location) {
-  let result = []
-  let count = 0
-  
-  for (let i = 0; i < jobs.length; i++) {
-    const job= jobs[i]
-    
-    if (job.title.toLowerCase().includes(title.toLowerCase()) && job.location.toLowerCase().includes(location.toLowerCase())){
-      result.push(job)
-      count++
-    }
-  }
-  return { result, count }
-
-
-}
-//console.log(searchJob("manager","ny"))
-
-
-
 function addJob(){
 
 let title = document.getElementById("title").value
 let location = document.getElementById("location").value
 const selection = searchJob(title , location)
 const ul = document.getElementById("listaLavori") 
+printJobCount(selection.count)
 
 if (title === "" || location === "") {
  alert("Inserisci almeno un valore!")
@@ -188,6 +153,17 @@ if (selection.count === 0) {
 })
 }
 }
+function printJobCount(count) {
+  const div = document.getElementById("risultati")
+  let conteggio = div.querySelector("p")
+  if (!conteggio) {
+      conteggio = document.createElement("p")
+      conteggio.id = "conteggio"
+      div.appendChild(conteggio)
+  }
+  conteggio.innerText = `Trovati ${count} lavori`
+}
+ 
 
 
 function deleteResults() {
@@ -205,4 +181,9 @@ const ul = document.getElementById("listaLavori")
         div.removeChild(conteggio)
     }
 }
+
+
+
+
+
 

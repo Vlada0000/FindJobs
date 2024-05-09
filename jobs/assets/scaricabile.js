@@ -194,6 +194,15 @@ function deleteResults() {
 document.getElementById("location").value = ""
 document.getElementById("title").value = ""
 
+const ul = document.getElementById("listaLavori")
+    while (ul.firstChild) {
+        ul.removeChild(ul.firstChild)
 
-  }
+ }
+ const div = document.getElementById("risultati")
+    const conteggio = div.querySelector("p")
+    if (conteggio) {
+        div.removeChild(conteggio)
+    }
+}
 
